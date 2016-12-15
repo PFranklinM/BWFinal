@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/monsterStayOnBoard.cs">
+    <Files>
+      <File FileName="Assets/Scripts/monsterMove.cs" Line="28" Column="4" />
+      <File FileName="Assets/Scripts/playerMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/frictionChange.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/monsterLookAtPlayer.cs" Line="19" Column="84" />
+      <File FileName="Assets/Scripts/monsterStayOnBoard.cs" Line="22" Column="35" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
