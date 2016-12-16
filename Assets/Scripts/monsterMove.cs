@@ -9,6 +9,10 @@ public class monsterMove : MonoBehaviour {
 
 	public float moveSpeed = 0.0f;
 
+	public bool touchedPlayer = false;
+
+	public bool closeToPlayer = false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -38,12 +42,18 @@ public class monsterMove : MonoBehaviour {
 		else if (randomNumber <= 0.01) {
 			monster.transform.position = player.transform.position - player.transform.forward * -10f;
 		}
-	
-	}
 
-	void OnCollisionEnter(Collision coll) {
-		if (coll.gameObject.tag == "player") {
-			Debug.Log ("You lost");
+		if (Vector3.Distance (monster.transform.position, player.transform.position) < 10f) {
+			closeToPlayer = true;
+		} else {
+			closeToPlayer = false;
 		}
+
+		if (Vector3.Distance (monster.transform.position, player.transform.position) < 3f) {
+			touchedPlayer = true;
+
+			monster.transform.position = player.transform.position - player.transform.forward * -3f;
+		}
+	
 	}
 }

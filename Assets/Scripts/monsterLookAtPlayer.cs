@@ -17,7 +17,13 @@ public class monsterLookAtPlayer : MonoBehaviour {
 		Vector3 lockDir = new Vector3 (0.0f, 0.0f, 0.0f);
 		float step = 1f * Time.deltaTime;
 		Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-		transform.rotation = Quaternion.LookRotation(newDir, lockDir);
+
+		Quaternion monsterRotation = Quaternion.LookRotation(newDir, lockDir);
+
+		monsterRotation.x = 0.0f;
+		monsterRotation.z = 0.0f;
+
+		transform.rotation = monsterRotation;
 	
 	}
 }

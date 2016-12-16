@@ -1,0 +1,23 @@
+print "Starting maya loading and fbx conversion \n";
+	
+if (`file -q -exists "/Users/paulmallon/Desktop/DT Fall 2016/Building Worlds/BWFinal/Assets/switch.ma"`)
+{		
+	file -o "/Users/paulmallon/Desktop/DT Fall 2016/Building Worlds/BWFinal/Assets/switch.ma";
+	FBXExportEmbeddedTextures -v false;
+	// FBXExportHardEdges -v true;
+	FBXExportApplyConstantKeyReducer -v false;
+	FBXExportShowUI -v false;
+
+	print "Before fbx export\n";
+	FBXExport -f "/Users/paulmallon/Desktop/DT Fall 2016/Building Worlds/BWFinal/Temp/ExportedFBXFile.fbx";
+	print "after fbx export\n";
+}
+else
+	print "Could not open Maya file.";
+
+
+system ("rm \"/Users/paulmallon/Desktop/DT Fall 2016/Building Worlds/BWFinal/Temp/CommandPipe\"");
+
+$donepipeKill = `fopen "/Users/paulmallon/Desktop/DT Fall 2016/Building Worlds/BWFinal/Temp/SyncPipeKill" "w"`;
+fwrite $donepipeKill "Done";
+fclose $donepipeKill;
